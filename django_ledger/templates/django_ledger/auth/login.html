@@ -17,6 +17,9 @@
                                 <div class="figure">
                                     <img src="{% static 'django_ledger/logo/django-ledger-logo.png' %}" alt="">
                                 </div>
+                                <!-- <div class="figure" style="font-size: 24px; font-weight: bold; text-align: center;">
+                                    nanaTrade
+                                </div> -->
                             </div>
                             <form action="{% url 'django_ledger:login' %}" method="post" id="djl-el-login-form">
                                 {% csrf_token %}
@@ -37,4 +40,5 @@
         </div>
     </section>
 {% endblock %}
-{% block footer %}{% endblock %}
+{% block footer %}
+{% endblock %}
