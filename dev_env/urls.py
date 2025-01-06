@@ -3,10 +3,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 from django_ledger.settings import DJANGO_LEDGER_GRAPHQL_SUPPORT_ENABLED
+# from django_ledger.views import DjangoLedgerSignuptView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django_ledger.urls', namespace='django_ledger')),
+    # path('signup', DjangoLedgerSignuptView),
 ]
 
 # GraphQl API Support...

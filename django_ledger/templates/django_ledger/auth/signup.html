@@ -1,0 +1,103 @@
+{% extends 'django_ledger/layouts/base.html' %}
+{% load trans from i18n %}
+{% load static %}
+
+{% block nav %}{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+<section class="hero is-fullheight" 
+         id="djl-login-bg-image"
+         style="background-image: url({% static 'django_ledger/img/daniel-weiss-aj2Os9mYgJU-unsplash.jpg' %}); background-size: cover; background-position: center;">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6-tablet is-4-desktop">
+                    <div class="box has-shadow" style="padding: 30px; border-radius: 10px;">
+                        <div class="has-text-centered">
+                            <figure class="image is-128x128 is-inline-block">
+                                <!-- <img src="{% static 'django_ledger/logo/django-ledger-logo.png' %}" alt="Django Ledger Logo"> -->
+                            </figure>
+                            <h2 class="title is-4 mt-4" style="color: #4a4a4a;">nanaTrade Signup</h2>
+                        </div>
+                        <form action="{% trans 'django_ledger:signup' %}" method="post">
+                            {% csrf_token %}
+                            <div class="field">
+                                <label class="label">Username</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" name="username" placeholder="Enter your username">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">First Name</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" name="firstname" placeholder="Enter your first name">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">Last Name</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" name="lastname" placeholder="Enter your last name">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" name="email" placeholder="Enter your email">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <label class="label">Password</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="password" name="password" placeholder="Enter your password">
+                                    <span class="icon is-small is-left">
+                                        <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="field is-grouped is-grouped-centered mt-5">
+                                <div class="control">
+                                    <button type="submit" class="button is-primary is-medium">
+                                        <strong>Signup</strong>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="has-text-centered mt-4">
+                                <p class="is-size-7">
+                                    Already have an account? 
+                                    <a href="{% trans 'login' %}" class="has-text-link">
+                                        Log in here
+                                    </a>.
+                                </p>
+                            </div>
+                        </form>
+                        <div class="messages mt-4">
+                            {% for message in messages %}
+                                <p class="notification is-danger is-light">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block footer %}{% endblock %}
