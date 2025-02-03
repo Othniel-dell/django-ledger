@@ -8,7 +8,7 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     SECRET_KEY = 'djangoledger1234!DoNotUse!BadIdea!VeryInsecure!'
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', "*"]
 CSRF_TRUSTED_ORIGINS = ['https://*.preview.app.github.dev']
