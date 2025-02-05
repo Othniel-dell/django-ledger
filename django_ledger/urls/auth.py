@@ -7,3 +7,6 @@ urlpatterns = [
     path('logout/', views.DjangoLedgerLogoutView.as_view(), name='logout'),
     path('signup/', views.DjangoLedgerSignuptView.as_view(), name='signup'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

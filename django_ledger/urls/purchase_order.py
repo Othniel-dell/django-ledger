@@ -51,3 +51,6 @@ urlpatterns = [
          views.PurchaseOrderMarkAsVoidView.as_view(),
          name='po-action-mark-as-void'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

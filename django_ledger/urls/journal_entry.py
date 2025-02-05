@@ -42,3 +42,6 @@ urlpatterns = [
          views.BaseJournalEntryActionView.as_view(action_name='mark_as_unlocked'),
          name='je-mark-as-unlocked'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,6 +1,8 @@
 from django.urls import path
 
 from django_ledger import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('<slug:entity_slug>/unit/list/',
@@ -35,3 +37,5 @@ urlpatterns = [
          name='unit-dashboard-date'),
 
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

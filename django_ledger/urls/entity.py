@@ -27,3 +27,6 @@ urlpatterns = [
     path('<slug:entity_slug>/update/', views.EntityModelUpdateView.as_view(), name='entity-update'),
     path('<slug:entity_slug>/delete/', views.EntityDeleteView.as_view(), name='entity-delete'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -19,3 +19,6 @@ urlpatterns = [
          views.DataImportJobDetailView.as_view(),
          name='data-import-job-txs'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -22,3 +22,6 @@ urlpatterns = [
          views.ReceivableNetAPIView.as_view(),
          name='unit-json-net-receivables'),
 ]
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
