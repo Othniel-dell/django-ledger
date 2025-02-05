@@ -1,4 +1,5 @@
 asgiref==3.8.1
+dj-database-url==2.3.0
 Django==5.1.4
 django-treebeard==4.7.1
 Faker==33.1.0
@@ -7,6 +8,7 @@ Markdown==3.7
 ofxtools==0.9.5
 packaging==24.2
 pillow==11.0.0
+psycopg2-binary==2.9.10
 python-dateutil==2.9.0.post0
 six==1.17.0
 sqlparse==0.5.3
