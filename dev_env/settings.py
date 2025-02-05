@@ -191,7 +191,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-APPEND_SLASH = False
+APPEND_SLASH = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -207,6 +207,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
